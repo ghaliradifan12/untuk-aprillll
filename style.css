@@ -1,0 +1,538 @@
+/* ===============================
+   GOOGLE FONT
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* ===============================
+   RESET
+==================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Quicksand',sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,#ffd6eb,#ffeef7,#fff8fc);
+    overflow:hidden;
+    width:100%;
+    height:100vh;
+}
+
+/* ===============================
+   FLOATING HEARTS
+==================================*/
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    color:#ee1a7d;
+    font-size:20px;
+    animation:float 7s linear infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120px) scale(1.3);
+        opacity:0;
+    }
+
+}
+
+/* ===============================
+   PAGE
+==================================*/
+
+.page{
+
+    position:absolute;
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:30px;
+
+    text-align:center;
+
+    animation:fade .8s;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===============================
+   TITLE
+==================================*/
+
+h1{
+
+    font-size:55px;
+    color:#ff4f98;
+
+    margin-bottom:15px;
+}
+
+h2{
+
+    color:#ff5f9e;
+
+    margin-bottom:20px;
+}
+
+h3{
+
+    color:#ff6aa8;
+}
+
+p{
+
+    font-size:20px;
+
+    color:#555;
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+/* ===============================
+   CAT
+==================================*/
+
+.cat{
+
+    width:220px;
+
+    margin-bottom:25px;
+
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+    }
+
+    100%{
+
+        transform:translateY(0);
+    }
+
+}
+
+/* ===============================
+   BUTTON
+==================================*/
+
+button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff77b7;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+    margin:10px;
+
+    box-shadow:0 8px 18px rgba(255,100,170,.35);
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    background:#ff5ca8;
+}
+
+button:active{
+
+    transform:scale(.95);
+}
+
+/* ===============================
+   MUTE
+==================================*/
+
+#muteBtn{
+
+    position:fixed;
+
+    right:20px;
+
+    top:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    z-index:999;
+}
+
+/* ===============================
+   GALLERY
+==================================*/
+
+/* ========== GALLERY ========== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 15px 0 25px;
+    width: 100%;
+    max-width: 900px;
+    padding: 5px;
+}
+
+.polaroid {
+    background: white;
+    padding: 12px 12px 28px;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
+    transform: rotate(-3deg);
+    transition: all 0.35s ease;
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:hover {
+    transform: scale(1.08) rotate(0deg);
+    z-index: 5;
+}
+
+.polaroid img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* ========== RESPONSIVE HP ========== */
+@media (max-width: 600px) {
+
+    .page {
+        justify-content: flex-start !important;
+        padding-top: 35px;
+        padding-bottom: 50px;
+        overflow-y: auto;
+    }
+
+    .gallery {
+        flex-direction: column;
+        gap: 16px;
+        margin: 10px 0 18px;
+    }
+
+    .polaroid {
+        transform: none !important;
+    }
+
+    .polaroid:nth-child(2),
+    .polaroid:nth-child(3) {
+        transform: none !important;
+    }
+
+    .polaroid img {
+        width: 200px;   /* ukuran aman di HP */
+        height: 200px;
+    }
+
+    .nextBtn {
+        margin-top: 8px;
+        margin-bottom: 25px;
+        z-index: 30;
+    }
+}
+
+/* ===============================
+   SLIDER
+==================================*/
+
+#slider{
+
+    width:350px;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 35px rgba(0,0,0,.2);
+
+    transition:.6s;
+}
+
+/* ===============================
+   ENVELOPE
+==================================*/
+
+#envelope{
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#envelope img{
+
+    width:220px;
+}
+
+#envelope:hover{
+
+    transform:scale(1.05);
+}
+
+/* ===============================
+   LETTER
+==================================*/
+
+#letter{
+
+    display:none;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    width:70%;
+
+    max-width:700px;
+
+    margin-top:25px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+    animation:fade .8s;
+}
+
+/* ===============================
+   TIMELINE
+==================================*/
+
+.timeline{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin:30px 0;
+}
+
+.timeline div{
+
+    background:white;
+
+    padding:15px 25px;
+
+    border-radius:40px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+.timeline div:hover{
+
+    transform:translateX(10px);
+
+    background:#ffe6f2;
+}
+
+/* ===============================
+   GAME AREA
+==================================*/
+
+#gameArea{
+
+    width:90%;
+
+    max-width:650px;
+
+    height:350px;
+
+    border-radius:25px;
+
+    background:white;
+
+    margin:20px auto;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* HATI GAME */
+
+.gameHeart{
+
+    position:absolute;
+
+    font-size:35px;
+
+    cursor:pointer;
+
+    animation:pop .4s;
+}
+
+@keyframes pop{
+
+    from{
+
+        transform:scale(0);
+    }
+
+    to{
+
+        transform:scale(1);
+    }
+
+}
+
+/* ===============================
+   RESPONSIVE
+==================================*/
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:36px;
+    }
+
+    h2{
+
+        font-size:28px;
+    }
+
+    p{
+
+        font-size:18px;
+    }
+
+    .cat{
+
+        width:170px;
+    }
+
+    .gallery{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .polaroid img{
+
+        width:250px;
+    }
+
+    #slider{
+
+        width:280px;
+    }
+
+    #letter{
+
+        width:90%;
+    }
+
+}
+
+@media(max-width:480px){
+
+    button{
+
+        width:90%;
+        font-size:16px;
+    }
+
+    h1{
+
+        font-size:30px;
+    }
+
+    h2{
+
+        font-size:24px;
+    }
+
+    .cat{
+
+        width:140px;
+    }
+
+}
